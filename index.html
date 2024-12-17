@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Wrapped</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Uchen&family=Viga&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDFY136Z4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QDFY136Z4T');
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>what a year huh?</h1>
+            <p class="subtitle">tiktok wrapped</p>
+        </header>
+
+        <div class="profile-section hidden" id="profileSection">
+            <div class="profile-container">
+                <div class="profile-info">
+                    <h2 class="username" id="profileUsername"></h2>
+                    <p class="bio" id="profileBio"></p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="profileLikes"></span>
+                            <span class="stat-label">Likes Received</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlights-section hidden" id="highlightsSection">
+            <div class="highlight-container">
+                <div class="highlight-content">
+                    <h2 class="highlight-title" id="highlightTitle"></h2>
+                    <p class="highlight-value" id="highlightValue"></p>
+                </div>
+                <button class="highlight-next" id="highlightNext">
+                    <span>Continue</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <main>
+            <div class="upload-section" id="uploadSection">
+                <h2>Upload Your TikTok Data</h2>
+                
+                <div class="upload-box">
+                    <input type="file" id="fileInput" accept=".json" class="file-input" hidden>
+                    <div class="upload-button-container">
+                        <label for="fileInput" class="upload-button">Choose File</label>
+                    </div>
+                    <p id="fileName" class="file-name"></p>
+                </div>
+
+                <div id="loadingSection" class="loading-section hidden">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video src="3.mp4" autoplay loop muted playsinline class="tutorial-video" onclick="openFullscreen(this)"></video>
+                    <div class="video-text">
+                        <h3>Request Your Data</h3>
+                        <p>Go to TikTok Privacy Settings</p>
+                    </div>
+                </div>
+                <div class="video-wrapper">
+                    <video src="2.mp4" autoplay loop muted playsinline class="tutorial-video" onclick="openFullscreen(this)"></video>
+                    <div class="video-text">
+                        <h3>Upload & Analyze</h3>
+                        <p>See your TikTok year in review</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p>⚠️ Note: The data shown may not be 100% accurate due to TikTok's data export limitations and processing methods.</p>
+            </div>
+
+            <div class="visualization-section hidden" id="visualizationSection">
+                <div class="viz-header">
+                    <h2>Your TikTok Activity</h2>
+                    <button class="show-highlights-btn" id="showHighlightsBtn">
+                        <span>Show Highlights</span>
+                    </button>
+                </div>
+                <div class="viz-controls">
+                    <div class="viz-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="vizTypeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="viz-label" id="vizLabel">Bar Graph</span>
+                    </div>
+                </div>
+                <div class="year-navigation">
+                    <button id="prevYear" class="year-nav-btn">◀</button>
+                    <span id="currentYear" class="year-display"></span>
+                    <button id="nextYear" class="year-nav-btn">▶</button>
+                    <button id="allYearsBtn" class="all-years-btn">Show All Years</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="activityChart" aria-label="TikTok activity over time" role="img"></canvas>
+                    <div id="heatmapChart" class="hidden">
+                        <div id="heatmapContent"></div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <button class="toggle-button" id="statsToggle">
+                        Detailed Statistics <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="stats-content hidden" id="statsContent">
+                        <div class="stats-grid" id="statsGrid">
+                            <!-- Stats content will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-section hidden" id="commentsSection">
+                <h2>Your TikTok Comments</h2>
+                <div class="year-navigation">
+                    <button id="commentPrevYear" class="year-nav-btn">◀</button>
+                    <span id="commentCurrentYear" class="year-display"></span>
+                    <button id="commentNextYear" class="year-nav-btn">▶</button>
+                    <button id="commentAllYearsBtn" class="all-years-btn">Show All Years</button>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="comment-chart-container">
+                        <div class="chart-wrapper">
+                            <canvas id="commentActivityChart" aria-label="Comment activity over time" role="img"></canvas>
+                        </div>
+                    </div>
+                    <div class="word-cloud-container">
+                        <h3>Most Used Words in Comments</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="wordCloudChart" aria-label="Most used words in comments" role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <button class="toggle-button" id="commentStatsToggle">
+                        Show Comment Statistics
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="stats-content hidden" id="commentStatsContent">
+                        <div class="stats-grid" id="commentStatsGrid">
+                            <!-- Comment stats will be inserted here by JavaScript -->
+                        </div>
+                        <div class="comments-list hidden" id="commentsList">
+                            <h3>Your Comments</h3>
+                            <div class="comments-container" id="commentsContainer">
+                                <!-- Comments will be inserted here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="direct-messages-section hidden" id="directMessagesSection">
+                <h2>Your TikTok Direct Messages</h2>
+                <div class="year-navigation">
+                    <button id="dmPrevYear" class="year-nav-btn">◀</button>
+                    <span id="dmCurrentYear" class="year-display"></span>
+                    <button id="dmNextYear" class="year-nav-btn">▶</button>
+                    <button id="dmAllYearsBtn" class="all-years-btn">Show All Years</button>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="dm-chart-container">
+                        <div class="chart-wrapper">
+                            <canvas id="dmActivityChart" aria-label="Direct message activity over time" role="img"></canvas>
+                        </div>
+                    </div>
+                    <div class="dm-users-container">
+                        <div class="chart-wrapper">
+                            <canvas id="dmUsersChart" aria-label="Most active message contacts" role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <button class="toggle-button" id="dmStatsToggle">
+                        Show Message Statistics
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="stats-content hidden" id="dmStatsContent">
+                        <div class="stats-grid" id="dmStatsGrid">
+                            <!-- DM stats will be inserted here by JavaScript -->
+                        </div>
+                        <div class="messages-list hidden" id="messagesList">
+                            <h3>Your Messages</h3>
+                            <div class="messages-container" id="messagesContainer">
+                                <!-- Messages will be inserted here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        function openFullscreen(video) {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+            
+            // Unmute video when in fullscreen
+            video.muted = false;
+        }
+    </script>
+</body>
+</html> 

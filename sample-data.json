@@ -1,0 +1,184 @@
+{
+  "Activity": {
+    "Like List": {
+      "ItemFavoriteList": [
+        {
+          "date": "2023-01-01 12:30:45",
+          "videoLink": "https://www.tiktok.com/video1"
+        },
+        {
+          "date": "2024-01-02 15:20:10",
+          "videoLink": "https://www.tiktok.com/video2"
+        },
+        {
+          "date": "2024-01-02 15:20:10",
+          "videoLink": "https://www.tiktok.com/video2"
+        },
+        {
+          "date": "2024-01-02 15:20:10",
+          "videoLink": "https://www.tiktok.com/video2"
+        },
+        {
+          "date": "2015-01-02 15:20:10",
+          "videoLink": "https://www.tiktok.com/video2"
+        },
+        {
+          "date": "2015-01-02 15:20:10",
+          "videoLink": "https://www.tiktok.com/video2"
+        },
+        {
+          "date": "2023-01-02 18:45:30",
+          "videoLink": "https://www.tiktok.com/video3"
+        }
+      ]
+    },
+    "Video Browsing History": {
+      "VideoList": [
+        {
+          "Date": "2024-08-01 10:00:00",
+          "VideoLink": "https://www.tiktok.com/video4"
+        },
+        {
+          "Date": "2024-08-01 10:00:00",
+          "VideoLink": "https://www.tiktok.com/video4"
+        },
+        {
+          "Date": "2024-08-01 10:00:00",
+          "VideoLink": "https://www.tiktok.com/video4"
+        },
+        {
+          "Date": "2024-08-01 10:00:00",
+          "VideoLink": "https://www.tiktok.com/video4"
+        },
+        {
+          "Date": "2023-01-02 14:30:00",
+          "VideoLink": "https://www.tiktok.com/video5"
+        }
+      ]
+    },
+    "Following List": {
+      "Following": [
+        {
+          "Date": "2024-09-15 09:15:00",
+          "UserName": "user1"
+        },
+        {
+          "Date": "2023-01-02 24:45:00",
+          "UserName": "user2"
+        }
+      ]
+    },
+    "Favorite Effects": {
+      "FavoriteEffectsList": [
+        {
+          "Date": "2023-01-01 13:20:00",
+          "EffectName": "Glitter Effect"
+        },
+        {
+          "Date": "2005-07-25 11:15:00",
+          "EffectName": "Beauty Filter"
+        }
+      ]
+    },
+    "Favorite Sounds": {
+      "FavoriteSoundList": [
+        {
+          "Date": "2023-01-01 14:45:00",
+          "SoundName": "Popular Song 1"
+        },
+        {
+          "Date": "2023-01-02 17:30:00",
+          "SoundName": "Trending Sound 2"
+        }
+      ]
+    },
+    "Favorite Videos": {
+      "FavoriteVideoList": [
+        {
+          "Date": "2023-01-01 24:10:00",
+          "VideoLink": "https://www.tiktok.com/favorite1"
+        },
+        {
+          "Date": "2023-01-02 19:20:00",
+          "VideoLink": "https://www.tiktok.com/favorite2"
+        },
+        {
+          "Date": "2023-01-02 19:20:00",
+          "VideoLink": "https://www.tiktok.com/favorite2"
+        },
+        {
+          "Date": "2023-01-02 19:20:00",
+          "VideoLink": "https://www.tiktok.com/favorite2"
+        }
+      ]
+    },
+    "Share History": {
+      "ShareHistoryList": [
+        {
+          "Date": "2023-01-01 18:30:00",
+          "VideoLink": "https://www.tiktok.com/shared1"
+        },
+        {
+          "Date": "2005-07-25 10:29:06",
+          "VideoLink": "https://www.tiktok.com/shared2"
+        }
+      ]
+    }
+  },
+  "Comment": {
+    "Comments": {
+      "CommentsList": [
+        {
+          "date": "2023-01-01 10:15:00",
+          "comment": "This is amazing! Love the creativity 🎨",
+          "VideoLink": "https://www.tiktok.com/comment1"
+        },
+        {
+          "date": "2023-01-01 14:30:00",
+          "comment": "Great dance moves! Keep it up 💃",
+          "VideoLink": "https://www.tiktok.com/comment2"
+        },
+        {
+          "date": "2023-01-02 09:45:00",
+          "comment": "This is so helpful! Thanks for sharing 🙏",
+          "VideoLink": "https://www.tiktok.com/comment3"
+        },
+        {
+          "date": "2023-01-02 24:20:00",
+          "comment": "Love this song! What's the name?",
+          "VideoLink": "https://www.tiktok.com/comment4"
+        },
+        {
+          "date": "2023-01-02 18:30:00",
+          "comment": "Amazing tutorial! Very helpful",
+          "VideoLink": "https://www.tiktok.com/comment5"
+        },
+        {
+          "date": "2023-01-02 20:15:00",
+          "comment": "This is so creative! Love it",
+          "VideoLink": "https://www.tiktok.com/comment6"
+        },
+        {
+          "date": "2023-01-01 11:45:00",
+          "comment": "Great tips! Thanks for sharing",
+          "VideoLink": "https://www.tiktok.com/comment7"
+        },
+        {
+          "date": "2023-01-01 13:20:00",
+          "comment": "This is amazing! Keep creating",
+          "VideoLink": "https://www.tiktok.com/comment8"
+        },
+        {
+          "date": "2023-01-02 12:30:00",
+          "comment": "Love the editing! What app do you use?",
+          "VideoLink": "https://www.tiktok.com/comment9"
+        },
+        {
+          "date": "2023-01-02 15:45:00",
+          "comment": "This is so helpful! Thanks",
+          "VideoLink": "https://www.tiktok.com/comment10"
+        }
+      ]
+    }
+  }
+} 
