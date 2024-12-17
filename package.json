@@ -7,9 +7,10 @@
     "start": "npx http-server -o -c-1"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "chart.js": "^4.4.0"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
   }
-} 
+}

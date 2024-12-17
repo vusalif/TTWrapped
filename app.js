@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
 
         // Force a minimum loading time of 5 seconds
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 12500));
 
         try {
             console.log('Processing file:', file.name);
@@ -2470,6 +2470,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Your existing highlight display logic here...
     }
-    
+
+    // Add this after your DOM content loaded event starts
+    const privacyToggle = document.querySelector('.privacy-toggle');
+    const privacyContent = document.querySelector('.privacy-content');
+
+    // Add this with your other event listeners
+    if (privacyToggle) {
+        privacyToggle.addEventListener('click', () => {
+            privacyToggle.classList.toggle('active');
+            privacyContent.classList.toggle('show');
+        });
+    }
 }); 
 

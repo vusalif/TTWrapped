@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      </script>
+      <script defer src="/_vercel/insights/script.js"></script>
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Wrapped</title>
@@ -73,6 +76,25 @@
                     <p id="fileName" class="file-name"></p>
                 </div>
 
+                <div class="privacy-notice">
+                    <button class="privacy-toggle">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        How is my data handled?
+                    </button>
+                    <div class="privacy-content">
+                        <p>🔒 <strong>Your privacy is our priority:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>All data processing happens directly in your browser</li>
+                            <li>No data is ever uploaded to any server</li>
+                            <li>Your TikTok data never leaves your device</li>
+                            <li>This tool works completely offline once loaded</li>
+                            <li>You can verify this in your browser's network inspector</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div id="loadingSection" class="loading-section hidden">
                     <div class="loading-spinner"></div>
                 </div>
@@ -96,7 +118,7 @@
             </div>
 
             <div class="disclaimer">
-                <p>⚠️ Note: The data shown may not be 100% accurate due to TikTok's data export limitations and processing methods.</p>
+                <p>⚠️ Note: The data shown may not be 100% accurate due to TikTok's data export limitations and processing methods.</p>Found a bug?<a href="https://forms.gle/zeRJa4ZYw2rJ99iA9" target="_blank" style="color:rgb(146, 35, 46); text-decoration: none; font-weight: 900;"> Report here</a>
             </div>
 
             <div class="visualization-section hidden" id="visualizationSection">
